@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outline Solutions | App en klantenportaal laten ontwikkelen</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600&amp;family=Play:wght@400;700&amp;family=Rubik:wght@300;400;500&amp;display=swap">
+<style>
+:root{--brand-hover:#89b85b;--brand-subtle:#f3f9ec;--ink-heading:#475c66;--focus:#4f7032;--shadow-md:0 8px 24px rgba(30,40,45,.10)}
+body{margin:0;background:#ffffff}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+a{color:#4f7032}a:hover{color:#3a5424}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.tr{transition:background-color .15s ease-out,border-color .15s ease-out,color .15s ease-out,transform .15s ease-out,box-shadow .25s ease-out}
+.hp:hover{background:var(--brand-hover)!important;transform:translateY(-1px)}
+.ho:hover{background:var(--brand-subtle)!important}
+.hg:hover{border-color:var(--ink-heading)!important}
+.hw:hover{background:rgba(255,255,255,.12)!important}
+.hl{transition:transform .25s ease-out,box-shadow .25s ease-out}
+.hl:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)!important}
+.zoom{transition:transform .6s ease-out}.hl:hover .zoom{transform:scale(1.03)}
+.arrow{transition:transform .15s ease-out}a:hover .arrow{transform:translateX(4px)}
+.nav-link:hover{color:#4f7032!important}.hf:hover{color:#99cc66!important}
+@media (max-width: 1060px){.nav-links{order:3;flex-basis:100%!important;justify-content:flex-start!important;overflow-x:auto}.nav-phone{display:none!important}}
+.page{animation:pageIn .5s ease-out both}
+@keyframes pageIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes reveal{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.reveal{animation:reveal ease-out both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+.draw .bx{stroke-dasharray:1;stroke-dashoffset:1;animation:drawb 1.4s cubic-bezier(.4,0,.2,1) forwards}
+.draw .b2{animation-delay:.2s}.draw .b3{animation-delay:.4s}
+@keyframes drawb{to{stroke-dashoffset:0}}
+.draw .fade{opacity:0;animation:fadeUp .7s ease-out forwards}
+.draw .d1{animation-delay:.8s}.draw .d2{animation-delay:1.1s}.draw .d3{animation-delay:1.3s}.draw .d4{animation-delay:1.5s}.draw .d5{animation-delay:1.7s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.float{animation:float 6s ease-in-out 2s infinite alternate}
+@keyframes float{to{transform:translateY(-8px)}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.page,.reveal,.float,.draw .bx,.draw .fade{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}}
+</style>
+</head>
+<body>
+<div class="page" style="font-family: 'Rubik', system-ui, sans-serif; font-weight: 300; color: #2c3a41; background: #ffffff;">
+
+<div style="position: sticky; top: 0; z-index: 50;">
+<header style="font-family: 'Rubik', system-ui, sans-serif; color: #2c3a41; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #e4ecf0;">
+<nav aria-label="Hoofdmenu" style="max-width: 1264px; margin: 0 auto; padding: 14px clamp(16px, 4vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px;">
+<a href="index.html" aria-label="Outline Solutions, naar home" style="display: flex; align-items: center; flex-shrink: 0;"><img src="assets/8427b5e8308d398db6ec7a0ec210efd6.png" alt="Outline Solutions" style="display: block; height: 34px; width: auto;"></a>
+<div class="nav-links" style="display: flex; align-items: center; justify-content: center; gap: 4px; flex: 1 1 auto; min-width: 0;">
+<a class="tr nav-link" href="index.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; font-family: 'Play', 'Bai Jamjuree', sans-serif; font-size: 14px; letter-spacing: 0.05em; text-decoration: none; white-space: nowrap; border-bottom: 2px solid #99cc66; color: #4f7032;">HOME</a>
+<a class="tr nav-link" href="werkwijze.html" aria-current="false" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; font-family: 'Play', 'Bai Jamjuree', sans-serif; font-size: 14px; letter-spacing: 0.05em; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; color: #2c3a41;">WERKWIJZE &amp; AI</a>
+<a class="tr nav-link" href="index.html#cases" aria-current="false" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; font-family: 'Play', 'Bai Jamjuree', sans-serif; font-size: 14px; letter-spacing: 0.05em; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; color: #2c3a41;">CASES</a>
+<a class="tr nav-link" href="wat-kost-een-app.html" aria-current="false" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; font-family: 'Play', 'Bai Jamjuree', sans-serif; font-size: 14px; letter-spacing: 0.05em; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; color: #2c3a41;">KOSTEN</a>
+<a class="tr nav-link" href="flutterflow.html" aria-current="false" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; font-family: 'Play', 'Bai Jamjuree', sans-serif; font-size: 14px; letter-spacing: 0.05em; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; color: #2c3a41;">FLUTTERFLOW</a>
+<a class="tr nav-link" href="blog.html" aria-current="false" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; font-family: 'Play', 'Bai Jamjuree', sans-serif; font-size: 14px; letter-spacing: 0.05em; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; color: #2c3a41;">BLOG</a>
+
+</div>
+<div style="display: flex; align-items: center; gap: 16px; flex-shrink: 0;">
+<a class="nav-phone tr" href="tel:+31853695022" style="display: inline-flex; align-items: center; gap: 8px; color: #2c3a41; text-decoration: none; font-weight: 400; font-size: 15px; min-height: 44px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4f7032" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>085-3695 022</a>
+<a class="tr ho" href="contact.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border-radius: 4px; border: 2px solid #99cc66; background: transparent; color: #2c3a41; font-weight: 500; font-size: 14px; letter-spacing: 0.04em; text-decoration: none; white-space: nowrap;">GRATIS GESPREK</a>
+</div>
+</nav>
+</header>
+</div>
+
+<!-- HERO -->
+<section style="position: relative; overflow: hidden; background: #ffffff;">
+<div style="max-width: 1264px; margin: 0 auto; padding: clamp(48px, 7vw, 96px) clamp(16px, 4vw, 32px) clamp(48px, 6vw, 80px); display: flex; flex-wrap: wrap; align-items: center; gap: 48px;">
+<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+<p style="margin: 0; display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; padding: 6px 12px; border-radius: 9999px; background: #f3f9ec; color: #4f7032; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6 4.7 1.9-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.9z"></path><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg>
+APPS EN PORTALEN, SLIM GEBOUWD MET AI</p>
+<h1 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 300; font-size: clamp(40px, 5.6vw, 68px); line-height: 1.06; letter-spacing: -0.01em; color: #475c66;">Jouw maatwerk app of klantenportaal. <span style="color: #4f7032; font-weight: 400;">Sneller live, lagere kosten.</span></h1>
+<p style="margin: 0; max-width: 580px; font-size: 20px; line-height: 32px; font-weight: 300;">Wij ontwerpen en bouwen intuïtieve apps en klantenportalen, altijd user first. Met Figma, Flutterflow, n8n en AI-assistenten zoals Claude werken we zeer efficiënt. Jij krijgt een app die je gebruikers zonder uitleg begrijpen.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px;">
+<a class="tr hp" href="contact.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 14px 28px; border-radius: 4px; background: #99cc66; color: #1e282d; font-weight: 500; font-size: 14px; letter-spacing: 0.04em; text-decoration: none;">PLAN EEN GRATIS GESPREK <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="tr hg" href="wat-kost-een-app.html" style="display: inline-flex; align-items: center; min-height: 52px; padding: 12px 26px; border-radius: 4px; border: 2px solid #77858c; color: #2c3a41; font-weight: 500; font-size: 14px; letter-spacing: 0.04em; text-decoration: none;">WAT KOST EEN APP?</a>
+</div>
+<p style="margin: 0; display: flex; align-items: center; gap: 10px; font-size: 15px; color: #5e727c;">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f7032" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>
+Liever direct bellen? <a href="tel:+31853695022" style="color: #4f7032; font-weight: 500; text-decoration: none;">085-3695 022</a></p>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; justify-content: center;">
+<svg class="draw" viewBox="0 0 600 520" role="img" aria-label="Isometrische illustratie van een bureau met een laptop met dashboard-app, een smartphone, een notitieboek, een koffiemok en een plant, in de groene en grijze huisstijlkleuren" style="width: 100%; max-width: 580px; height: auto; overflow: visible;">
+<rect class="bx" pathLength="1" x="140" y="10" width="250" height="250" rx="48" fill="none" stroke="#e3f1d4" stroke-width="16"></rect>
+<rect class="bx b2" pathLength="1" x="230" y="60" width="250" height="250" rx="48" fill="none" stroke="#c9e4ac" stroke-width="16"></rect>
+<!-- desk -->
+<g transform="matrix(0.866 0.5 -0.866 0.5 300 150)"><rect x="0" y="0" width="340" height="300" fill="#f2f7fa"></rect><path d="M56 0V300M112 0V300M168 0V300M224 0V300M280 0V300M0 60H340M0 120H340M0 180H340M0 240H340" stroke="#e4ecf0" stroke-width="2" stroke-dasharray="4 6"></path></g>
+<g transform="matrix(0.866 0.5 0 1 40.2 300)"><rect x="0" y="0" width="340" height="16" fill="#c8d4da"></rect></g>
+<g transform="matrix(-0.866 0.5 0 1 594.44 320)"><rect x="0" y="0" width="300" height="16" fill="#a0adb3"></rect></g>
+<!-- plant -->
+<path d="M520 300V325A14 7 0 0 0 548 325V300Z" fill="#475c66"></path><ellipse cx="534" cy="300" rx="14" ry="7" fill="#3a4c55"></ellipse>
+<ellipse cx="523" cy="280" rx="8" ry="18" fill="#89b85b" transform="rotate(-25 523 280)"></ellipse><ellipse cx="545" cy="279" rx="8" ry="20" fill="#99cc66" transform="rotate(22 545 279)"></ellipse><ellipse cx="534" cy="268" rx="7" ry="22" fill="#779e4f"></ellipse>
+<!-- laptop screen -->
+<g transform="matrix(0.866 0.5 0 1 239.38 185)">
+<rect x="60" y="-124" width="160" height="124" rx="6" fill="#2c3a41"></rect>
+<rect x="67" y="-117" width="146" height="109" rx="2" fill="#ffffff"></rect>
+<rect x="67" y="-117" width="21" height="109" fill="#475c66"></rect>
+<rect x="72" y="-108" width="11" height="8" rx="2" fill="#99cc66"></rect><rect x="72" y="-94" width="11" height="8" rx="2" fill="#77858c"></rect><rect x="72" y="-80" width="11" height="8" rx="2" fill="#77858c"></rect>
+<rect x="88" y="-117" width="125" height="12" fill="#f2f7fa"></rect><rect x="94" y="-113" width="36" height="4" rx="2" fill="#c8d4da"></rect>
+<rect x="94" y="-99" width="36" height="19" rx="3" fill="#f3f9ec"></rect><rect x="98" y="-94" width="20" height="3" rx="1.5" fill="#77858c"></rect><rect x="98" y="-88" width="12" height="4" rx="2" fill="#99cc66"></rect>
+<rect x="135" y="-99" width="36" height="19" rx="3" fill="#f3f9ec"></rect><rect x="139" y="-94" width="20" height="3" rx="1.5" fill="#77858c"></rect><rect x="139" y="-88" width="16" height="4" rx="2" fill="#89b85b"></rect>
+<rect x="176" y="-99" width="32" height="19" rx="3" fill="#475c66"></rect><rect x="180" y="-94" width="16" height="3" rx="1.5" fill="#c8d4da"></rect><rect x="180" y="-88" width="10" height="4" rx="2" fill="#99cc66"></rect>
+<rect x="94" y="-74" width="114" height="60" rx="3" fill="#f2f7fa"></rect>
+<rect x="100" y="-34" width="8" height="14" rx="1.5" fill="#c9e4ac"></rect><rect x="113" y="-44" width="8" height="24" rx="1.5" fill="#b0d88a"></rect><rect x="126" y="-38" width="8" height="18" rx="1.5" fill="#c9e4ac"></rect><rect x="139" y="-54" width="8" height="34" rx="1.5" fill="#99cc66"></rect><rect x="152" y="-46" width="8" height="26" rx="1.5" fill="#b0d88a"></rect><rect x="165" y="-62" width="8" height="42" rx="1.5" fill="#779e4f"></rect><rect x="178" y="-50" width="8" height="30" rx="1.5" fill="#99cc66"></rect><rect x="191" y="-40" width="8" height="20" rx="1.5" fill="#c9e4ac"></rect>
+</g>
+<!-- laptop base -->
+<g transform="matrix(0.866 0.5 -0.866 0.5 300 150)">
+<rect x="60" y="70" width="160" height="110" rx="4" fill="#e4ecf0"></rect>
+<rect x="72" y="80" width="136" height="60" rx="3" fill="#475c66"></rect>
+<path d="M72 95H208M72 110H208M72 125H208M94 80V140M117 80V140M140 80V140M163 80V140M186 80V140" stroke="#3a4c55" stroke-width="1.5"></path>
+<rect x="115" y="148" width="50" height="24" rx="3" fill="#c8d4da"></rect>
+</g>
+<g transform="matrix(0.866 0.5 0 1 144.12 240)"><rect x="60" y="0" width="160" height="7" fill="#a0adb3"></rect></g>
+<g transform="matrix(-0.866 0.5 0 1 490.52 260)"><rect x="70" y="0" width="110" height="7" fill="#77858c"></rect></g>
+<!-- coffee mug -->
+<path d="M390 289V335A22 11 0 0 0 434 335V289Z" fill="#ffffff" stroke="#c8d4da" stroke-width="1.5"></path>
+<path d="M390 300V307A22 11 0 0 0 434 307V300A22 11 0 0 1 390 300Z" fill="#99cc66"></path>
+<path d="M434 298c15 0 15 24 0 24" fill="none" stroke="#c8d4da" stroke-width="5" stroke-linecap="round"></path>
+<ellipse cx="412" cy="289" rx="22" ry="11" fill="#ffffff" stroke="#c8d4da" stroke-width="1.5"></ellipse><ellipse cx="412" cy="290" rx="17" ry="8" fill="#3a4c55"></ellipse>
+<path d="M404 276c-6-8 6-13 0-21M420 274c-6-8 6-13 0-21" fill="none" stroke="#c8d4da" stroke-width="3" stroke-linecap="round"></path>
+<!-- phone -->
+<g transform="matrix(0.866 0.5 0 1 48.86 295)"><rect x="20" y="0" width="50" height="4" fill="#1e282d"></rect></g>
+<g transform="matrix(-0.866 0.5 0 1 360.62 185)"><rect x="200" y="0" width="90" height="4" fill="#1e282d"></rect></g>
+<g transform="matrix(0.866 0.5 -0.866 0.5 300 150)">
+<rect x="20" y="200" width="50" height="90" rx="7" fill="#2c3a41"></rect>
+<rect x="24" y="206" width="42" height="78" rx="4" fill="#f3f9ec"></rect>
+<rect x="30" y="213" width="30" height="12" rx="3" fill="#99cc66"></rect><rect x="30" y="231" width="30" height="5" rx="2.5" fill="#a0adb3"></rect><rect x="30" y="241" width="22" height="5" rx="2.5" fill="#c8d4da"></rect><rect x="30" y="253" width="30" height="22" rx="3" fill="#ffffff"></rect>
+</g>
+<!-- notebooks -->
+<g transform="matrix(0.866 0.5 0 1 47.13 296)"><rect x="155" y="0" width="145" height="8" fill="#779e4f"></rect></g>
+<g transform="matrix(-0.866 0.5 0 1 559.8 300)"><rect x="205" y="0" width="87" height="8" fill="#89b85b"></rect></g>
+<g transform="matrix(0.866 0.5 -0.866 0.5 300 150)"><rect x="155" y="205" width="145" height="87" rx="3" fill="#99cc66"></rect></g>
+<g transform="matrix(0.866 0.5 -0.866 0.5 300 143)">
+<rect x="150" y="210" width="75" height="78" rx="2" fill="#ffffff" stroke="#e4ecf0"></rect><rect x="225" y="210" width="75" height="78" rx="2" fill="#ffffff" stroke="#e4ecf0"></rect>
+<path d="M160 228H215M160 240H215M160 252H205M160 264H215M235 228H290M235 240H280M235 252H290" stroke="#c8d4da" stroke-width="2"></path>
+<path d="M232 276L288 220" stroke="#779e4f" stroke-width="6" stroke-linecap="round"></path><path d="M288 220L294 214" stroke="#2c3a41" stroke-width="3" stroke-linecap="round"></path>
+</g>
+<!-- floating cards -->
+<g class="fade d2"><g class="float">
+<rect x="440" y="40" width="140" height="84" rx="14" fill="#ffffff" stroke="#e4ecf0" style="filter: drop-shadow(0 10px 20px rgba(30,40,45,.12));"></rect>
+<rect x="456" y="56" width="48" height="6" rx="3" fill="#475c66"></rect><rect x="456" y="68" width="30" height="5" rx="2.5" fill="#c8d4da"></rect>
+<path d="M456 108L478 96L496 101L516 84L540 90L564 72" fill="none" stroke="#99cc66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="564" cy="72" r="4" fill="#ffffff" stroke="#779e4f" stroke-width="2"></circle>
+</g></g>
+<g class="fade d3"><circle cx="96" cy="214" r="20" fill="#99cc66"></circle><path d="M87 214.5l6 6 12-13" fill="none" stroke="#1e282d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<g class="fade d5"><rect x="20" y="110" width="170" height="44" rx="22" fill="#475c66"></rect><path d="M46 120l2.2 5.6 5.6 2.2-5.6 2.2-2.2 5.6-2.2-5.6-5.6-2.2 5.6-2.2z" fill="#99cc66"></path><text x="64" y="138" font-family="Rubik, sans-serif" font-size="15" fill="#ffffff">Powered by AI</text></g>
+</svg>
+</div>
+</div>
+<div style="max-width: 1264px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px) 56px;">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 40px; padding-top: 28px; border-top: 1px solid #c8d4da;">
+<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.14em; color: #5e727c;">ZIJ GINGEN JE VOOR</span>
+<span style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 22px; color: #475c66;">Vitens</span>
+<span style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 22px; color: #475c66;">Flamingo fashion</span>
+<span style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 22px; color: #475c66;">Masking Technology</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; margin-left: auto; padding: 8px 14px; border: 2px solid #99cc66; border-radius: 4px; font-size: 14px; font-weight: 400; color: #2c3a41;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4f7032" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Flutterflow expert</span>
+</div>
+</div>
+</section>
+
+<!-- DIENSTEN -->
+<section id="diensten" style="background: #f2f7fa; padding: clamp(64px, 8vw, 96px) clamp(16px, 4vw, 32px);">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+<div class="reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px;">
+<div style="max-width: 680px; display: flex; flex-direction: column; gap: 16px;">
+<p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; color: #4f7032;">APPLICATIE ONTWIKKELING</p>
+<h2 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 400; font-size: clamp(32px, 4.4vw, 48px); line-height: 1.15; letter-spacing: 0.02em; color: #475c66;">DIENSTEN</h2>
+<p style="margin: 0; font-size: 20px; line-height: 32px;">Wil jij een maatwerk app of klantenportaal laten ontwikkelen? Wij zijn gespecialiseerd in app design en denken graag met je mee om tot de beste oplossing te komen.</p>
+</div>
+<a class="tr ho" href="werkwijze.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 24px; border-radius: 4px; border: 2px solid #99cc66; color: #2c3a41; font-weight: 500; font-size: 14px; letter-spacing: 0.04em; text-decoration: none;">ONZE WERKWIJZE <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px;">
+<article class="hl reveal" style="background: #ffffff; border: 1px solid #c8d4da; border-radius: 8px; padding: 28px 24px; display: flex; flex-direction: column; gap: 16px;">
+<div style="width: 56px; height: 56px; border-radius: 8px; background: #f3f9ec; color: #4f7032; display: flex; align-items: center; justify-content: center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M11 18.5h2"></path></svg></div>
+<h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 24px; line-height: 32px; color: #475c66;">Maatwerk apps</h3>
+<p style="margin: 0; font-size: 16px; line-height: 26px;">Eén codebase voor iOS, Android en web. Gebouwd in Flutterflow, dus snel, betrouwbaar en betaalbaar.</p>
+</article>
+<article class="hl reveal" style="background: #ffffff; border: 1px solid #c8d4da; border-radius: 8px; padding: 28px 24px; display: flex; flex-direction: column; gap: 16px;">
+<div style="width: 56px; height: 56px; border-radius: 8px; background: #f3f9ec; color: #4f7032; display: flex; align-items: center; justify-content: center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16" rx="3"></rect><path d="M2.5 9h19M6 6.5h.01M9 6.5h.01"></path></svg></div>
+<h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 24px; line-height: 32px; color: #475c66;">Klantenportalen</h3>
+<p style="margin: 0; font-size: 16px; line-height: 26px;">Een veilige omgeving waar klanten én medewerkers inloggen, bestellingen volgen en rapportages bekijken.</p>
+</article>
+<article class="hl reveal" style="background: #ffffff; border: 1px solid #c8d4da; border-radius: 8px; padding: 28px 24px; display: flex; flex-direction: column; gap: 16px;">
+<div style="width: 56px; height: 56px; border-radius: 8px; background: #f3f9ec; color: #4f7032; display: flex; align-items: center; justify-content: center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11a2.1 2.1 0 0 0-3-3L5 16z"></path><path d="M14 7l3 3"></path></svg></div>
+<h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 24px; line-height: 32px; color: #475c66;">App design en prototypes</h3>
+<p style="margin: 0; font-size: 16px; line-height: 26px;">UX en UI design in Figma, met klikbare prototypes die we testen met echte gebruikers voordat er gebouwd wordt.</p>
+</article>
+<article class="hl reveal" style="background: #ffffff; border: 1px solid #c8d4da; border-radius: 8px; padding: 28px 24px; display: flex; flex-direction: column; gap: 16px;">
+<div style="width: 56px; height: 56px; border-radius: 8px; background: #f3f9ec; color: #4f7032; display: flex; align-items: center; justify-content: center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"></circle><circle cx="18" cy="12" r="2.5"></circle><circle cx="6" cy="18" r="2.5"></circle><path d="M8.5 6h3a3 3 0 0 1 3 3v.5M8.5 18h3a3 3 0 0 0 3-3v-.5"></path></svg></div>
+<h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 24px; line-height: 32px; color: #475c66;">Koppelingen en automatisering</h3>
+<p style="margin: 0; font-size: 16px; line-height: 26px;">Met n8n verbinden we je app met je boekhoudpakket, CRM of AI-diensten, zonder dure maatwerkcode.</p>
+</article>
+</div>
+</div>
+</section>
+
+<!-- AI -->
+<section id="ai" style="background: #2c3a41; color: #ffffff; padding: clamp(64px, 8vw, 112px) clamp(16px, 4vw, 32px); position: relative; overflow: hidden;">
+<svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; right: -120px; top: -80px; width: 520px; height: 520px; opacity: 0.18;"><rect x="40" y="40" width="200" height="200" rx="38" fill="none" stroke="#99cc66" stroke-width="16"></rect><rect x="120" y="120" width="200" height="200" rx="38" fill="none" stroke="#99cc66" stroke-width="16"></rect></svg>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px;">
+<div class="reveal" style="max-width: 760px; display: flex; flex-direction: column; gap: 20px;">
+<p style="margin: 0; display: inline-flex; align-items: center; gap: 8px; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; color: #99cc66;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6 4.7 1.9-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.9z"></path></svg>SLIM INGEZET: AI</p>
+<h2 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 300; font-size: clamp(34px, 4.6vw, 54px); line-height: 1.12; color: #ffffff;">Wij laten AI het zware werk doen. <span style="color: #99cc66;">Jij houdt meer budget over.</span></h2>
+<p style="margin: 0; font-size: 20px; line-height: 32px; color: #e4ecf0;">Wij zetten AI-modellen zoals Claude bewust in op de plekken waar het echt tijd scheelt: van het uitwerken van user stories tot het schrijven en testen van code. Niet om het denkwerk over te nemen, maar zodat wij meer tijd hebben voor waar het om draait: jouw gebruikers.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+<div class="reveal" style="background: #3a4c55; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 20px;">
+<div style="display: flex; align-items: center; gap: 14px;"><div style="width: 48px; height: 48px; border-radius: 8px; background: #99cc66; color: #1e282d; display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11a2.1 2.1 0 0 0-3-3L5 16z"></path><path d="M14 7l3 3"></path></svg></div><h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 26px; color: #ffffff;">In het ontwerp</h3></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 16px; line-height: 26px; color: #e4ecf0;">
+<li style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#99cc66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Gesprekken en wensen sneller vertaald naar heldere user stories en specificaties</li>
+<li style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#99cc66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Snel meerdere ontwerpvarianten van schermen en flows om uit te kiezen</li>
+<li style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#99cc66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Klikbare prototypes eerder klaar, dus eerder feedback van echte gebruikers</li>
+<li style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#99cc66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Teksten en microcopy die aansluiten op jouw doelgroep</li>
+</ul>
+</div>
+<div class="reveal" style="background: #3a4c55; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 20px;">
+<div style="display: flex; align-items: center; gap: 14px;"><div style="width: 48px; height: 48px; border-radius: 8px; background: #99cc66; color: #1e282d; display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"></path></svg></div><h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 26px; color: #ffffff;">In het bouwen</h3></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 16px; line-height: 26px; color: #e4ecf0;">
+<li style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#99cc66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Maatwerkcode voor unieke functies, in een fractie van de tijd geschreven</li>
+<li style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#99cc66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>n8n-workflows en API-koppelingen in minder uren opgezet</li>
+<li style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#99cc66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Grondiger testen en code reviews, zodat fouten vroeg worden opgespoord</li>
+<li style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#99cc66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Documentatie die gewoon klaar is bij oplevering</li>
+</ul>
+</div>
+</div>
+<div class="reveal" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-top: 32px; border-top: 1px solid #475c66;">
+<p style="margin: 0; max-width: 680px; display: flex; gap: 14px; font-size: 17px; line-height: 28px; color: #e4ecf0;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#99cc66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span><strong style="font-weight: 500; color: #ffffff;">Altijd een mens aan het roer.</strong> Elk ontwerp en elke regel code wordt door ons gecontroleerd. AI maakt ons sneller, de keuzes maken we samen met jou.</span></p>
+<a class="tr hp" href="werkwijze.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 24px; border-radius: 4px; background: #99cc66; color: #1e282d; font-weight: 500; font-size: 14px; letter-spacing: 0.04em; text-decoration: none;">ZO WERKEN WIJ MET AI <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</section>
+
+<!-- CASES -->
+<section id="cases" style="background: #ffffff; padding: clamp(64px, 8vw, 96px) clamp(16px, 4vw, 32px);">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px;">
+<div class="reveal" style="max-width: 680px; display: flex; flex-direction: column; gap: 16px;">
+<p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; color: #4f7032;">RESULTATEN</p>
+<h2 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 400; font-size: clamp(32px, 4.4vw, 48px); line-height: 1.15; letter-spacing: 0.02em; color: #475c66;">CASES</h2>
+<p style="margin: 0; font-size: 20px; line-height: 32px;">Van drinkwaterbedrijf tot vintage kledingwinkel: zo hielpen wij organisaties met software die dagelijks gebruikt wordt.</p>
+</div>
+
+<a class="hl reveal" href="project-vitens.html" style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px; text-decoration: none; color: inherit; background: #f2f7fa; border-radius: 16px; padding: clamp(24px, 4vw, 48px); overflow: hidden;">
+<div style="flex: 1 1 440px; min-width: 0; overflow: hidden; border-radius: 8px;"><img class="zoom" src="assets/343e8dbf031cac34b95941ec3fe69a9c.png" alt="3D mockup van het Reststoffen informatie systeem voor Vitens" style="display: block; width: 100%; height: auto;"></div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+<p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; color: #4f7032;">RESTSTOFFEN-INFORMATIE</p>
+<h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 32px; line-height: 40px; color: #475c66;">Vitens</h3>
+<p style="margin: 0; font-size: 16px; line-height: 26px;">Waterleidingbedrijf Vitens filtert reststoffen uit het drinkwater dat wordt opgepompt. Omdat deze stoffen steeds waardevoller zijn geworden, is het inzicht en beheer hiervan belangrijker geworden. Outline Solutions ontwikkelde een compleet nieuw informatiesysteem met gebruiksvriendelijke dashboards voor operators en managers.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="padding: 4px 10px; border-radius: 2px; background: #e3f1d4; color: #3a5424; font-size: 13px; font-weight: 400;">Dashboard</span><span style="padding: 4px 10px; border-radius: 2px; background: #e3f1d4; color: #3a5424; font-size: 13px; font-weight: 400;">Realtime monitoring</span><span style="padding: 4px 10px; border-radius: 2px; background: #e3f1d4; color: #3a5424; font-size: 13px; font-weight: 400;">Rapid prototyping</span></div>
+<span style="display: inline-flex; align-items: center; gap: 8px; color: #4f7032; font-weight: 500; font-size: 15px;">Lees de case <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</div>
+</a>
+
+<a class="hl reveal" href="project-flamingo.html" style="display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 48px; text-decoration: none; color: inherit; background: #f2f7fa; border-radius: 16px; padding: clamp(24px, 4vw, 48px); overflow: hidden;">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+<p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; color: #4f7032;">VINTAGE KLEDING APP</p>
+<h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 32px; line-height: 40px; color: #475c66;">Flamingo fashion</h3>
+<p style="margin: 0; font-size: 16px; line-height: 26px;">In de handel van vintage kleding lopen verschillende typen goederen door elkaar en BTW-regels verschillen. Bestaande boekhoudpakketten voldoen niet. Outline Solutions realiseerde een gebruiksvriendelijk klantenportaal met een minimale administratieve belasting voor de medewerkers.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="padding: 4px 10px; border-radius: 2px; background: #e3f1d4; color: #3a5424; font-size: 13px; font-weight: 400;">Klantenportaal</span><span style="padding: 4px 10px; border-radius: 2px; background: #e3f1d4; color: #3a5424; font-size: 13px; font-weight: 400;">Smartphone en tablet</span><span style="padding: 4px 10px; border-radius: 2px; background: #e3f1d4; color: #3a5424; font-size: 13px; font-weight: 400;">Administratie</span></div>
+<span style="display: inline-flex; align-items: center; gap: 8px; color: #4f7032; font-weight: 500; font-size: 15px;">Lees de case <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</div>
+<div style="flex: 1 1 440px; min-width: 0; overflow: hidden; border-radius: 8px;"><img class="zoom" src="assets/b51d6a26566e427ad5f858280f350876.png" alt="3D mockup van de Flamingo fashion app op een smartphone en tablet" style="display: block; width: 100%; height: auto;"></div>
+</a>
+
+<a class="hl reveal" href="project-masking-technology.html" style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px; text-decoration: none; color: inherit; background: #f2f7fa; border-radius: 16px; padding: clamp(24px, 4vw, 48px); overflow: hidden;">
+<div style="flex: 1 1 440px; min-width: 0; overflow: hidden; border-radius: 8px;"><img class="zoom" src="assets/d1c9a591dcc3d9795e60d628f588d7a8.png" alt="3D mockup van de Masking Studio op een Apple Mac" style="display: block; width: 100%; height: auto;"></div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+<p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; color: #4f7032;">MASKING STUDIO</p>
+<h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 32px; line-height: 40px; color: #475c66;">Masking Technology</h3>
+<p style="margin: 0; font-size: 16px; line-height: 26px;">De meeste software groeit ad hoc en organisch. Het werkt, maar is moeilijk te onderhouden en slecht schaalbaar. Masking Technology heeft voor beide problemen een oplossing, en Outline Solutions ontwierp het design van hun nieuwe IDE-studio.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="padding: 4px 10px; border-radius: 2px; background: #e3f1d4; color: #3a5424; font-size: 13px; font-weight: 400;">UX design</span><span style="padding: 4px 10px; border-radius: 2px; background: #e3f1d4; color: #3a5424; font-size: 13px; font-weight: 400;">Interactieve prototypes</span><span style="padding: 4px 10px; border-radius: 2px; background: #e3f1d4; color: #3a5424; font-size: 13px; font-weight: 400;">Gebruikerstesten</span></div>
+<span style="display: inline-flex; align-items: center; gap: 8px; color: #4f7032; font-weight: 500; font-size: 15px;">Lees de case <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</div>
+</a>
+</div>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze" style="background: #f2f7fa; padding: clamp(64px, 8vw, 96px) clamp(16px, 4vw, 32px);">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+<div class="reveal" style="max-width: 760px; display: flex; flex-direction: column; gap: 16px;">
+<p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; color: #4f7032;">OUTLINE FIRST</p>
+<h2 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 400; font-size: clamp(32px, 4.4vw, 48px); line-height: 1.15; letter-spacing: 0.02em; color: #475c66;">WERKWIJZE</h2>
+<p style="margin: 0; font-size: 20px; line-height: 32px;">Als app bouwer werken wij van buiten naar binnen. Wij denken user first en niet technology first. Ons doel is een intuïtief ontwerp waarin gebruikers zonder uitleg begrijpen hoe alles werkt.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+<div class="reveal" style="background: #ffffff; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 12px; border-top: 4px solid #99cc66;">
+<h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 22px; letter-spacing: 0.04em; color: #475c66;">USER FIRST</h3>
+<p style="margin: 0; font-size: 16px; line-height: 26px;">Technologie moet in dienst staan van mensen. Wij starten daarom altijd vanuit de mens en blijven gedurende een project toetsen of de oplossing nog optimaal is voor de doelgroep.</p>
+</div>
+<div class="reveal" style="background: #ffffff; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 12px; border-top: 4px solid #89b85b;">
+<h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 22px; letter-spacing: 0.04em; color: #475c66;">DESIGN FOR INTUITION</h3>
+<p style="margin: 0; font-size: 16px; line-height: 26px;">Is de visuele communicatie consistent en logisch? Komt de respons overeen met wat de gebruiker verwacht? De beste applicaties zijn laagdrempelig en hebben een minimale leercurve.</p>
+</div>
+<div class="reveal" style="background: #ffffff; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 12px; border-top: 4px solid #779e4f;">
+<h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 22px; letter-spacing: 0.04em; color: #475c66;">NO-CODE + AI</h3>
+<p style="margin: 0; font-size: 16px; line-height: 26px;">Goed gereedschap is het halve werk. Figma voor prototypes, Flutterflow en n8n voor het bouwen, en AI zoals Claude om elke stap te versnellen. Zo houden we de kosten laag.</p>
+</div>
+</div>
+<ol class="reveal" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; counter-reset: none;">
+<li style="display: flex; flex-direction: column; gap: 10px;"><span style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 300; font-size: 40px; line-height: 1; color: #779e4f;">01</span><strong style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 18px; color: #475c66;">Kennismaken</strong><span style="font-size: 15px; line-height: 24px;">Gratis en vrijblijvend, gerust bij een kop koffie.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px;"><span style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 300; font-size: 40px; line-height: 1; color: #779e4f;">02</span><strong style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 18px; color: #475c66;">Outline</strong><span style="font-size: 15px; line-height: 24px;">Waarom wil je een app? Soms is het eerlijke antwoord: niet doen.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px;"><span style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 300; font-size: 40px; line-height: 1; color: #779e4f;">03</span><strong style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 18px; color: #475c66;">Ontwerp en prototype</strong><span style="font-size: 15px; line-height: 24px;">Een realistisch, interactief prototype dat je zelf kunt doorklikken, getest met jouw gebruikers.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px;"><span style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 300; font-size: 40px; line-height: 1; color: #779e4f;">04</span><strong style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 18px; color: #475c66;">Bouwen</strong><span style="font-size: 15px; line-height: 24px;">In Flutterflow en n8n, versneld met AI.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px;"><span style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 300; font-size: 40px; line-height: 1; color: #779e4f;">05</span><strong style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 18px; color: #475c66;">Lanceren en groeien</strong><span style="font-size: 15px; line-height: 24px;">Live in de app stores of als web app.</span></li>
+</ol>
+</div>
+</section>
+
+<!-- KOSTEN -->
+<section id="kosten" style="background: #ffffff; padding: clamp(64px, 8vw, 96px) clamp(16px, 4vw, 32px);">
+<div class="reveal" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+<p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; color: #4f7032;">TRANSPARANT OVER KOSTEN</p>
+<h2 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 400; font-size: clamp(32px, 4.4vw, 48px); line-height: 1.15; color: #475c66;">Wat kost een app?</h2>
+<p style="margin: 0; font-size: 20px; line-height: 32px;">Een maatwerk app kost gemiddeld tussen de <strong style="font-weight: 500;">€ 3.000 en € 20.000</strong>. Een klantenportaal tussen de <strong style="font-weight: 500;">€ 4.000 en € 50.000</strong>. Wij leggen je precies uit welke keuzes de prijs bepalen, en waar je kunt besparen.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 4px;">
+<a class="tr hp" href="wat-kost-een-app.html" style="display: inline-flex; align-items: center; min-height: 48px; padding: 12px 24px; border-radius: 4px; background: #99cc66; color: #1e282d; font-weight: 500; font-size: 14px; letter-spacing: 0.04em; text-decoration: none;">KOSTEN APP</a>
+<a class="tr ho" href="kosten-klantenportaal.html" style="display: inline-flex; align-items: center; min-height: 48px; padding: 12px 24px; border-radius: 4px; border: 2px solid #99cc66; color: #2c3a41; font-weight: 500; font-size: 14px; letter-spacing: 0.04em; text-decoration: none;">KOSTEN KLANTENPORTAAL</a>
+</div>
+</div>
+<div style="flex: 1 1 460px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;">
+<div style="border: 2px solid #c8d4da; border-radius: 8px; padding: 24px 20px; display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'Bai Jamjuree', sans-serif; font-size: 28px; color: #4f7032;">€</span><strong style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 20px; color: #475c66;">Prototype</strong><span style="font-size: 14px; line-height: 22px; color: #5e727c;">Een idee testen met een klikbaar ontwerp.</span></div>
+<div style="border: 2px solid #99cc66; border-radius: 8px; padding: 24px 20px; display: flex; flex-direction: column; gap: 8px; background: #f3f9ec;"><span style="font-family: 'Bai Jamjuree', sans-serif; font-size: 28px; color: #4f7032;">€€</span><strong style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 20px; color: #475c66;">MVP</strong><span style="font-size: 14px; line-height: 22px; color: #5e727c;">Een complete app met alle kernfuncties.</span></div>
+<div style="border: 2px solid #c8d4da; border-radius: 8px; padding: 24px 20px; display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'Bai Jamjuree', sans-serif; font-size: 28px; color: #4f7032;">€€€</span><strong style="font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 20px; color: #475c66;">Business app</strong><span style="font-size: 14px; line-height: 22px; color: #5e727c;">Veel gebruikers, koppelingen en hoge eisen.</span></div>
+</div>
+</div>
+</section>
+
+<!-- OVER -->
+<section id="over" style="background: #f2f7fa; padding: clamp(64px, 8vw, 96px) clamp(16px, 4vw, 32px);">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
+<div class="reveal" style="flex: 1 1 400px; min-width: 0; position: relative;">
+<img src="assets/51c8ef8203f5d95bb16624686289dfd7.jpg" alt="Foto van het kantoor van Outline Solutions" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; box-shadow: 0 8px 24px rgba(30,40,45,.10);">
+</div>
+<div class="reveal" style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+<p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; color: #4f7032;">WIE WIJ ZIJN</p>
+<h2 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 400; font-size: clamp(32px, 4.4vw, 48px); line-height: 1.15; letter-spacing: 0.02em; color: #475c66;">OVER</h2>
+<p style="margin: 0; font-size: 18px; line-height: 30px;">Outline Solutions staat voor een aanpak waarin wij van buiten naar binnen werken. Met deze 'outline first' aanpak beginnen we zo breed mogelijk. Onze eerste vraag is daarom: waarom wil je een app of klantenportaal? Soms is dan het antwoord dat dit helemaal geen goede investering is, of dat er al software bestaat die je kunt gebruiken.</p>
+<p style="margin: 0; font-size: 18px; line-height: 30px;">Wij hebben brede ervaring in sectoren zoals de gezondheidszorg, financiële dienstverlening en retail. Met ons netwerk van zelfstandigen stellen we flexibel een team samen met precies de kennis die jouw project nodig heeft.</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+<li style="display: flex; gap: 10px; align-items: center; font-size: 15px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f7032" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Eerlijk advies, ook als het "nee" is</li>
+<li style="display: flex; gap: 10px; align-items: center; font-size: 15px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f7032" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Flutterflow expert</li>
+<li style="display: flex; gap: 10px; align-items: center; font-size: 15px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f7032" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Ervaring in zorg, finance en retail</li>
+<li style="display: flex; gap: 10px; align-items: center; font-size: 15px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f7032" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Flexibel team op maat</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- BLOG -->
+<section id="blog" style="background: #ffffff; padding: clamp(64px, 8vw, 96px) clamp(16px, 4vw, 32px);">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+<div class="reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; color: #4f7032;">KENNIS DELEN</p>
+<h2 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 400; font-size: clamp(32px, 4.4vw, 48px); line-height: 1.15; letter-spacing: 0.02em; color: #475c66;">BLOG</h2>
+</div>
+<a href="blog.html" style="display: inline-flex; align-items: center; gap: 8px; color: #4f7032; font-weight: 500; font-size: 15px; text-decoration: none;">Alle posts <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+<a class="hl reveal" href="post-flutterflow-6.html" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid #c8d4da; border-radius: 8px; overflow: hidden; background: #ffffff;">
+<div style="overflow: hidden; aspect-ratio: 16 / 9;"><img class="zoom" src="assets/9cb14ec8b01e09fedc5acabd007f962f.jpg" alt="Laptop die opent in een donkere ruimte" style="display: block; width: 100%; height: 100%; object-fit: cover;"></div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px;"><span style="font-size: 13px; color: #5e727c; font-weight: 400;">30 mei 2025 · 3 minuten om te lezen</span><h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 24px; line-height: 32px; color: #475c66;">Flutterflow 6.0</h3><p style="margin: 0; font-size: 15px; line-height: 24px;">Flutterflow 6.0 is gelanceerd. In deze blog lees je alles over de nieuwste features.</p></div>
+</a>
+<a class="hl reveal" href="post-best-tools.html" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid #c8d4da; border-radius: 8px; overflow: hidden; background: #ffffff;">
+<div style="overflow: hidden; aspect-ratio: 16 / 9;"><img class="zoom" src="assets/bba732c844c262aad4d48dabdca81fc8.png" alt="Illustratie van een kantoormedewerker met zwevende icoontjes van Flutterflow, Figma en n8n" style="display: block; width: 100%; height: 100%; object-fit: cover;"></div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px;"><span style="font-size: 13px; color: #5e727c; font-weight: 400;">19 jun 2024 · 3 minuten om te lezen</span><h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 24px; line-height: 32px; color: #475c66;">Best tools for the job</h3><p style="margin: 0; font-size: 15px; line-height: 24px;">In de snel ontwikkelende wereld van app-ontwikkeling is het kiezen van de juiste tools essentieel voor succes.</p></div>
+</a>
+<a class="hl reveal" href="post-11-stappen.html" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid #c8d4da; border-radius: 8px; overflow: hidden; background: #ffffff;">
+<div style="overflow: hidden; aspect-ratio: 16 / 9;"><img class="zoom" src="assets/921434395f75450a759a1f1beb687915.png" alt="Illustratie van een laptop met een man die een lampje vasthoudt" style="display: block; width: 100%; height: 100%; object-fit: cover;"></div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px;"><span style="font-size: 13px; color: #5e727c; font-weight: 400;">4 jun 2024 · 5 minuten om te lezen</span><h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 500; font-size: 24px; line-height: 32px; color: #475c66;">11 onmisbare stappen voor een succesvolle app</h3><p style="margin: 0; font-size: 15px; line-height: 24px;">Een maatwerk app ontwikkelen omvat veel meer dan alleen het schrijven van code.</p></div>
+</a>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div style="font-family: 'Rubik', system-ui, sans-serif; font-weight: 300; color: #2c3a41; background: #f2f7fa; padding: clamp(64px, 8vw, 96px) clamp(16px, 4vw, 32px);">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start;">
+
+<div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+<p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; color: #4f7032;">VRIJBLIJVENDE OFFERTE</p>
+<h2 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-weight: 400; font-size: clamp(32px, 4.4vw, 48px); line-height: 1.15; letter-spacing: 0.02em; color: #475c66;">CONTACT</h2>
+<p style="margin: 0; font-size: 20px; line-height: 32px;">Wil je een nieuwe app of klantenportaal ontwikkelen? Of een bestaande app in een nieuw, modern jasje steken? Vul het formulier in en ontvang een vrijblijvende offerte voor jouw project.</p>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px;">
+<a class="tr hl" href="tel:+31853695022" style="display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: #ffffff; border: 1px solid #c8d4da; border-radius: 8px; text-decoration: none; color: #2c3a41;">
+<span style="width: 48px; height: 48px; border-radius: 8px; background: #f3f9ec; color: #4f7032; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 13px; color: #5e727c; font-weight: 400;">Bel ons direct</span><span style="font-size: 17px; font-weight: 400; color: #2c3a41;">085-3695 022</span></span>
+</a>
+<a class="tr hl" href="mailto:info@outlinesolutions.nl" style="display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: #ffffff; border: 1px solid #c8d4da; border-radius: 8px; text-decoration: none; color: #2c3a41;">
+<span style="width: 48px; height: 48px; border-radius: 8px; background: #f3f9ec; color: #4f7032; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 13px; color: #5e727c; font-weight: 400;">Mail ons</span><span style="font-size: 17px; font-weight: 400; color: #2c3a41;">info@outlinesolutions.nl</span></span>
+</a>
+<div style="display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: #ffffff; border: 1px solid #c8d4da; border-radius: 8px; color: #2c3a41;">
+<span style="width: 48px; height: 48px; border-radius: 8px; background: #f3f9ec; color: #4f7032; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 13px; color: #5e727c; font-weight: 400;">Kom langs</span><span style="font-size: 16px; font-weight: 400;">Burgemeester Drijbersingel 51, 8021 JB Zwolle</span></span>
+</div>
+</div>
+</div>
+
+<div style="flex: 1 1 460px; min-width: 0; background: #ffffff; border-radius: 16px; padding: clamp(24px, 4vw, 40px); box-shadow: 0 8px 24px rgba(30,40,45,.10);">
+<iframe data-tally-src="https://tally.so/embed/Eq5KgA?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="546" frameborder="0" marginheight="0" marginwidth="0" title="Contact Outline Solutions"></iframe>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer style="font-family: 'Rubik', system-ui, sans-serif; font-weight: 300; color: #ffffff; background: #475c66; padding: 72px clamp(16px, 4vw, 32px) 32px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<img src="assets/12a7807b728f5ef32f7e3f488ff66b03.png" alt="Outline Solutions" style="display: block; height: 29px; width: auto; align-self: flex-start;">
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #e4ecf0;">Maatwerk apps en klantenportalen. User first ontworpen, slim gebouwd met no-code en AI.</p>
+<div style="display: flex; gap: 8px;">
+<a class="tr hw" href="https://www.linkedin.com/company/outlinesolutions" aria-label="LinkedIn" style="width: 44px; height: 44px; border-radius: 4px; border: 1.5px solid #a0adb3; display: flex; align-items: center; justify-content: center; color: #ffffff;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2 2 0 0 1 4 0v3"/></svg></a>
+<a class="tr hw" href="https://www.instagram.com/outlinesolutions/" aria-label="Instagram" style="width: 44px; height: 44px; border-radius: 4px; border: 1.5px solid #a0adb3; display: flex; align-items: center; justify-content: center; color: #ffffff;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7v.01"/></svg></a>
+<a class="tr hw" href="http://www.pinterest.com/outlinesolutions4uidesign" aria-label="Pinterest" style="width: 44px; height: 44px; border-radius: 4px; border: 1.5px solid #a0adb3; display: flex; align-items: center; justify-content: center; color: #ffffff;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M11 8.5c3-1 5.5 1 4.5 3.8-.7 2-3 2.6-4 1.2M11.5 10l-2.5 11"/></svg></a>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px;">
+<h2 style="margin: 0 0 4px; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.14em; color: #99cc66;">CONTACT</h2>
+<a class="tr hf" href="tel:+31853695022" style="color: #ffffff; text-decoration: none; font-size: 15px;">085-3695 022</a>
+<a class="tr hf" href="mailto:info@outlinesolutions.nl" style="color: #ffffff; text-decoration: none; font-size: 15px;">info@outlinesolutions.nl</a>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #e4ecf0;">Burgemeester Drijbersingel 51<br>8021 JB Zwolle</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px;">
+<h2 style="margin: 0 0 4px; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.14em; color: #99cc66;">LINKS</h2>
+<a class="tr hf" href="werkwijze.html" style="color: #ffffff; text-decoration: none; font-size: 15px;">Werkwijze en AI</a>
+<a class="tr hf" href="index.html#cases" style="color: #ffffff; text-decoration: none; font-size: 15px;">Cases</a>
+<a class="tr hf" href="wat-kost-een-app.html" style="color: #ffffff; text-decoration: none; font-size: 15px;">Kostencalculator app</a>
+<a class="tr hf" href="kosten-klantenportaal.html" style="color: #ffffff; text-decoration: none; font-size: 15px;">Kostencalculator klantenportaal</a>
+<a class="tr hf" href="flutterflow.html" style="color: #ffffff; text-decoration: none; font-size: 15px;">Flutterflow expert</a>
+<a class="tr hf" href="blog.html" style="color: #ffffff; text-decoration: none; font-size: 15px;">Blog</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px;">
+<h2 style="margin: 0 0 4px; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.14em; color: #99cc66;">BEDRIJFSGEGEVENS</h2>
+<p style="margin: 0; font-size: 15px; color: #e4ecf0;">KvK: 54745284</p>
+<p style="margin: 0; font-size: 15px; color: #e4ecf0;">BTW: NL001968113B32</p>
+<a class="tr hf" href="algemene-voorwaarden.html" style="color: #ffffff; text-decoration: none; font-size: 15px;">Algemene voorwaarden</a>
+<a class="tr hf" href="privacy-beleid.html" style="color: #ffffff; text-decoration: none; font-size: 15px;">Privacybeleid</a>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 24px; border-top: 1px solid #77858c; font-size: 13px; color: #e4ecf0;">
+<span>© 2026 Outline Solutions</span>
+<span style="font-family: 'Play', sans-serif; letter-spacing: 0.05em;">Next generation applications</span>
+</div>
+</div>
+</footer>
+</div>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+</body>
+</html>
